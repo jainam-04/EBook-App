@@ -23,7 +23,6 @@ public class LoginServlet extends HttpServlet {
 			HttpSession session = request.getSession();
 			String email = request.getParameter("email");
 			String password = request.getParameter("password");
-			System.out.println(email + " " + password);
 			if (email.equals("admin@gmail.com") && password.equals("admin")) {
 				User user = new User();
 				session.setAttribute("UserObj", user);
