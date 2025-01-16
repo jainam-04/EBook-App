@@ -20,7 +20,7 @@ a:hover {
 </head>
 <body>
 	<%@ include file="navbar.jsp"%>
-	<div class="container" style="margin-bottom: 42vh;">
+	<div class="container" style="margin-bottom: 39.3vh;">
 		<div class="row p-5">
 			<div class="col-md-3">
 				<a href="add_books.jsp">

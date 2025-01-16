@@ -66,4 +66,64 @@ public class BooksDAOImpl implements BooksDAO {
 		}
 		return list;
 	}
+
+	public BookDetails getBookById(int id) {
+		BookDetails book = null;
+		try {
+			String sql = "select * from book_details where book_id = ?";
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setInt(1, id);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				book = new BookDetails();
+				book.setBookId(rs.getInt(1));
+				book.setBookName(rs.getString(2));
+				book.setAuthorName(rs.getString(3));
+				book.setPrice(rs.getString(4));
+				book.setBookCategory(rs.getString(5));
+				book.setStatus(rs.getString(6));
+				book.setPhoto(rs.getString(7));
+				book.setEmail(rs.getString(8));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return book;
+	}
+
+	public boolean updateEditBooks(BookDetails book) {
+		boolean flag = false;
+		try {
+			String sql = "update book_details set book_name = ?, author_name = ?, price = ?, status = ? where book_id = ?";
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setString(1, book.getBookName());
+			ps.setString(2, book.getAuthorName());
+			ps.setString(3, book.getPrice());
+			ps.setString(4, book.getStatus());
+			ps.setInt(5, book.getBookId());
+			int i = ps.executeUpdate();
+			if (i == 1) {
+				flag = true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return flag;
+	}
+
+	public boolean deleteBooks(int id) {
+		boolean flag = false;
+		try {
+			String sql = "delete from book_details where book_id = ?";
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setInt(1, id);
+			int i = ps.executeUpdate();
+			if (i == 1) {
+				flag = true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return flag;
+	}
 }
