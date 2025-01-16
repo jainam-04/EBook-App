@@ -19,7 +19,7 @@ public class EditBooksServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		try {
-			int bookId = Integer.parseInt(request.getParameter("id"));
+			int bookId = Integer.parseInt(request.getParameter("book_id"));
 			String bookName = request.getParameter("book_name");
 			String authorName = request.getParameter("author_name");
 			String price = request.getParameter("price");

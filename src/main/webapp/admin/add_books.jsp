@@ -51,7 +51,7 @@
 								<label for="inputState">Book Categories</label> <select
 									id="inputState" class="form-control" name="book_categories">
 									<option selected>--Select--</option>
-									<option>New Book</option>
+									<option>New</option>
 								</select>
 							</div>
 							<div class="form-group">
