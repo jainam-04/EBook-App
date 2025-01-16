@@ -12,6 +12,9 @@
 </head>
 <body style="background-color: #f0f1f2;">
 	<%@ include file="navbar.jsp"%>
+	<c:if test="${empty UserObj}">
+		<c:redirect url="../login.jsp" />
+	</c:if>
 	<div class="container p-4" style="margin-bottom: 4.3vh;">
 		<div class="row">
 			<div class="col-md-4 offset-md-4">

@@ -11,12 +11,16 @@
 </head>
 <body style="background-color: #f0f1f2;">
 	<%@include file="all_component/navbar.jsp"%>
-	<div class="container p-5" style="margin-bottom: 21.3vh;">
+	<div class="container p-5" style="margin-bottom: 17.7vh;">
 		<div class="row">
 			<div class="col-md-4 offset-md-4">
 				<div class="card">
 					<div class="card-body">
 						<h4 class="text-center">Login Page</h4>
+						<c:if test="${not empty success_msg}">
+							<p class="text-center text-success">${success_msg}</p>
+							<c:remove var="success_msg" scope="session" />
+						</c:if>
 						<c:if test="${not empty failed_msg}">
 							<p class="text-center text-danger">${failed_msg}</p>
 							<c:remove var="failed_msg" scope="session" />
