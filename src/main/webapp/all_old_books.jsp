@@ -36,9 +36,10 @@
 							Categories:
 							<%=book.getBookCategory()%></p>
 						<div class="row">
-							<a href="" class="btn btn-success btn-sm ml-5">View Details</a> <a
-								href="" class="btn btn-danger btn-sm ml-1"><%=book.getPrice()%>
-								<i class="fas fa-rupee-sign"></i></a>
+							<a href="view_books.jsp?id=<%=book.getBookId()%>"
+								class="btn btn-danger btn-sm ml-5">View Details</a> <a href=""
+								class="btn btn-danger btn-sm ml-1"><%=book.getPrice()%> <i
+								class="fas fa-rupee-sign"></i></a>
 						</div>
 					</div>
 				</div>

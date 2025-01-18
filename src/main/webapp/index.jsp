@@ -52,9 +52,10 @@
 							Categories:
 							<%=book.getBookCategory()%></p>
 						<div class="row">
-							<a href="" class="btn btn-danger btn-sm ml-5">View Details</a> <a
-								href="" class="btn btn-danger btn-sm ml-1"><%=book.getPrice()%>
-								<i class="fas fa-rupee-sign"></i></a>
+							<a href="view_books.jsp?id=<%=book.getBookId()%>"
+								class="btn btn-danger btn-sm ml-5">View Details</a> <a href=""
+								class="btn btn-danger btn-sm ml-1"><%=book.getPrice()%> <i
+								class="fas fa-rupee-sign"></i></a>
 						</div>
 						<%
 						} else {
@@ -64,9 +65,10 @@
 							<%=book.getBookCategory()%></p>
 						<div class="row">
 							<a href="" class="btn btn-danger btn-sm ml-1">Add Cart</a> <a
-								href="" class="btn btn-success btn-sm ml-1">View Details</a> <a
-								href="" class="btn btn-danger btn-sm ml-1"><%=book.getPrice()%>
-								<i class="fas fa-rupee-sign"></i></a>
+								href="view_books.jsp?id=<%=book.getBookId()%>"
+								class="btn btn-success btn-sm ml-1">View Details</a> <a href=""
+								class="btn btn-danger btn-sm ml-1"><%=book.getPrice()%> <i
+								class="fas fa-rupee-sign"></i></a>
 						</div>
 						<%
 						}
@@ -80,7 +82,7 @@
 		</div>
 		<div class="text-center mt-1">
 			<a href="all_recent_books.jsp"
-				class="btn btn-danger btn-sm text-white">View Details</a>
+				class="btn btn-danger btn-sm text-white">View All Books</a>
 		</div>
 	</div>
 	<!-- Recent Book End -->
@@ -108,9 +110,10 @@
 							<%=book.getBookCategory()%></p>
 						<div class="row">
 							<a href="" class="btn btn-danger btn-sm ml-2">Add Cart</a> <a
-								href="" class="btn btn-success btn-sm ml-1">View Details</a> <a
-								href="" class="btn btn-danger btn-sm ml-1"><%=book.getPrice()%>
-								<i class="fas fa-rupee-sign"></i></a>
+								href="view_books.jsp?id=<%=book.getBookId()%>"
+								class="btn btn-success btn-sm ml-1">View Details</a> <a href=""
+								class="btn btn-danger btn-sm ml-1"><%=book.getPrice()%> <i
+								class="fas fa-rupee-sign"></i></a>
 						</div>
 					</div>
 				</div>
@@ -121,7 +124,7 @@
 		</div>
 		<div class="text-center mt-1">
 			<a href="all_new_books.jsp" class="btn btn-danger btn-sm text-white">View
-				Details</a>
+				All Books</a>
 		</div>
 	</div>
 	<!-- New Book End -->
@@ -148,9 +151,10 @@
 							Categories:
 							<%=book.getBookCategory()%></p>
 						<div class="row">
-							<a href="" class="btn btn-success btn-sm ml-5">View Details</a> <a
-								href="" class="btn btn-danger btn-sm ml-1"><%=book.getPrice()%>
-								<i class="fas fa-rupee-sign"></i></a>
+							<a href="view_books.jsp?id=<%=book.getBookId()%>"
+								class="btn btn-danger btn-sm ml-5">View Details</a> <a href=""
+								class="btn btn-danger btn-sm ml-1"><%=book.getPrice()%> <i
+								class="fas fa-rupee-sign"></i></a>
 						</div>
 					</div>
 				</div>
@@ -161,7 +165,7 @@
 		</div>
 		<div class="text-center mt-1">
 			<a href="all_old_books.jsp" class="btn btn-danger btn-sm text-white">View
-				Details</a>
+				All Books</a>
 		</div>
 	</div>
 	<!-- Old Book End -->
