@@ -18,7 +18,8 @@
 </head>
 <body>
 	<%@ include file="all_component/navbar.jsp"%>
-	<div class="container my-5">
+	<h1 class="text-center mt-3">Old Books</h1>
+	<div class="container my-3">
 		<div class="row">
 			<%
 			BooksDAOImpl dao = new BooksDAOImpl(DBConnect.getConnection());
