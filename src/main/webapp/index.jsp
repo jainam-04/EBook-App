@@ -91,15 +91,16 @@ to {
 		</script>
 		<c:remove var="success_msg" scope="session" />
 	</c:if>
-	<c:if test="${not empty failed_msg}">
-		<h4 class="text-center text-danger">${failed_msg}</h4>
-		<c:remove var="failed_msg" scope="session" />
-	</c:if>
+
 	<div class="container-fluid back-img bg-white">
 		<h2 class="text-center text-danger">EBook Management System</h2>
 	</div>
 	<!-- Recent Book Start -->
 	<div class="container">
+		<c:if test="${not empty failed_msg}">
+			<h4 class="text-center text-danger">${failed_msg}</h4>
+			<c:remove var="failed_msg" scope="session" />
+		</c:if>
 		<h3 class="text-center">Recent Book</h3>
 		<div class="row">
 			<%

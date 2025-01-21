@@ -1,5 +1,12 @@
+<%@page import="com.entity.Cart"%>
+<%@page import="java.util.List"%>
+<%@page import="com.entity.User"%>
+<%@page import="com.DB.DBConnect"%>
+<%@page import="com.DAO.CartDAOImpl"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +15,18 @@
 <%@ include file="all_component/allCss.jsp"%>
 </head>
 <body style="background-color: #f0f1f2;">
+	<c:if test="${empty UserObj}">
+		<c:redirect url="login.jsp" />
+	</c:if>
 	<%@ include file="all_component/navbar.jsp"%>
+	<c:if test="${not empty success_msg}">
+		<div class="alert alert-success" role="alert">${success_msg}</div>
+		<c:remove var="success_msg" scope="session" />
+	</c:if>
+	<c:if test="${not empty failed_msg}">
+		<div class="alert alert-danger" role="alert">${failed_msg}</div>
+		<c:remove var="failed_msg" scope="session" />
+	</c:if>
 	<h1 class="text-center">Cart Page</h1>
 	<div class="container">
 		<div class="row p-2">
@@ -19,30 +37,37 @@
 						<table class="table table-striped">
 							<thead>
 								<tr>
-									<th scope="col">#</th>
-									<th scope="col">First</th>
-									<th scope="col">Last</th>
-									<th scope="col">Handle</th>
+									<th scope="col">Book Name</th>
+									<th scope="col">Author Name</th>
+									<th scope="col">Price</th>
+									<th scope="col">Action</th>
 								</tr>
 							</thead>
 							<tbody>
+								<%
+								User user = (User) session.getAttribute("UserObj");
+								CartDAOImpl dao = new CartDAOImpl(DBConnect.getConnection());
+								List<Cart> list = dao.getBookByUser(user.getId());
+								double totalPrice = 0.0;
+								for (Cart cart : list) {
+									totalPrice = cart.getTotalPrice();
+								%>
 								<tr>
-									<th scope="row">1</th>
-									<td>Mark</td>
-									<td>Otto</td>
-									<td>@mdo</td>
+									<td><%=cart.getBookName()%></td>
+									<td><%=cart.getAuthorName()%></td>
+									<td><%=cart.getPrice()%></td>
+									<td><a
+										href="remove_book?bid=<%=cart.getBookId()%>&&uid=<%=cart.getUserId()%>"
+										class="btn btn-danger">Remove</a></td>
 								</tr>
+								<%
+								}
+								%>
 								<tr>
-									<th scope="row">2</th>
-									<td>Jacob</td>
-									<td>Thornton</td>
-									<td>@fat</td>
-								</tr>
-								<tr>
-									<th scope="row">3</th>
-									<td>Larry</td>
-									<td>the Bird</td>
-									<td>@twitter</td>
+									<td>Total Price</td>
+									<td></td>
+									<td></td>
+									<td><%=totalPrice%></td>
 								</tr>
 							</tbody>
 						</table>
