@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,8 +21,11 @@ a:hover {
 </head>
 <body style="background-color: #f7f7f7;">
 	<%@ include file="all_component/navbar.jsp"%>
+	<c:if test="${empty UserObj}">
+		<c:redirect url="login.jsp" />
+	</c:if>
 	<div class="container" style="margin-bottom: 6.8vh;">
-		<h2 class="text-center mt-3">Hello User</h2>
+		<h2 class="text-center mt-3">Hello ${UserObj.name}</h2>
 		<div class="row p-5">
 			<div class="col-md-6">
 				<a href="sell_book.jsp">
