@@ -27,7 +27,7 @@ a:hover {
 	<div class="container" style="margin-bottom: 6.8vh;">
 		<h2 class="text-center mt-3">Hello ${UserObj.name}</h2>
 		<div class="row p-5">
-			<div class="col-md-6">
+			<div class="col-md-4">
 				<a href="sell_book.jsp">
 					<div class="card text-center">
 						<div class="card-body">
@@ -37,7 +37,17 @@ a:hover {
 					</div>
 				</a>
 			</div>
-			<div class="col-md-6">
+			<div class="col-md-4">
+				<a href="old_book.jsp">
+					<div class="card text-center">
+						<div class="card-body">
+							<i class="fas fa-book-open fa-3x text-primary"></i>
+							<h3 class="mt-2">Old Books</h3>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-md-4">
 				<a href="edit_profile.jsp">
 					<div class="card text-center">
 						<div class="card-body">

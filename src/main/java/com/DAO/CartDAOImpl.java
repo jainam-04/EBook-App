@@ -65,15 +65,16 @@ public class CartDAOImpl implements CartDAO {
 		return list;
 	}
 
-	public boolean deleteBook(int bookId, int userId) {
+	public boolean deleteBook(int bookId, int userId, int cartId) {
 		boolean flag = false;
 		try {
-			String sql = "delete from cart where book_id = ? and user_id = ?";
+			String sql = "delete from cart where book_id = ? and user_id = ? and cart_id = ?";
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setInt(1, bookId);
 			ps.setInt(2, userId);
+			ps.setInt(3, cartId);
 			int i = ps.executeUpdate();
-			if (i > 0) {
+			if (i == 1) {
 				flag = true;
 			}
 		} catch (Exception e) {
