@@ -60,4 +60,39 @@ public class UserDAOImpl implements UserDAO {
 		return user;
 	}
 
+	public boolean checkPassword(int id, String password) {
+		boolean flag = false;
+		try {
+			String sql = "select * from user where id = ? and password = ?";
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setInt(1, id);
+			ps.setString(2, password);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				flag = true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return flag;
+	}
+
+	public boolean updateProfile(User user) {
+		boolean flag = false;
+		try {
+			String sql = "update user set name = ?, email = ?, phone_no = ? where id = ?";
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setString(1, user.getName());
+			ps.setString(2, user.getEmail());
+			ps.setString(3, user.getPhone_no());
+			ps.setInt(4, user.getId());
+			int i = ps.executeUpdate();
+			if (i == 1) {
+				flag = true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return flag;
+	}
 }

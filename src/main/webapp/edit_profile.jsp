@@ -1,3 +1,4 @@
+<%@page import="com.entity.User"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -14,29 +15,42 @@
 	<c:if test="${empty UserObj}">
 		<c:redirect url="login.jsp" />
 	</c:if>
-	<div class="container p-3">
+	<%
+	User user = (User) session.getAttribute("UserObj");
+	%>
+	<div class="container p-3" style="margin-bottom: 5.3vh;">
 		<div class="row">
 			<div class="col-md-4 offset-md-4">
 				<div class="card">
 					<div class="card-body">
 						<h4 class="text-center text-primary p-1">Edit Profile</h4>
-						<form action="register" method="post">
+						<c:if test="${not empty success_msg}">
+							<h5 class="text-center text-success">${success_msg}</h5>
+							<c:remove var="success_msg" scope="session" />
+						</c:if>
+						<c:if test="${not empty failed_msg}">
+							<h5 class="text-center text-danger">${failed_msg}</h5>
+							<c:remove var="failed_msg" scope="session" />
+						</c:if>
+						<form action="update_profile" method="post">
+							<input type="hidden" value="<%=user.getId()%>" name="id" />
 							<div class="form-group">
 								<label for="exampleInputEmail1">Enter Full Name</label> <input
 									type="text" class="form-control" id="exampleInputEmail1"
 									aria-describedby="emailHelp" required="required"
-									name="full_name">
+									name="full_name" value="<%=user.getName()%>">
 							</div>
 							<div class="form-group">
 								<label for="exampleInputEmail1">Email address</label> <input
 									type="email" class="form-control" id="exampleInputEmail1"
-									aria-describedby="emailHelp" required="required" name="email">
+									aria-describedby="emailHelp" required="required" name="email"
+									value="<%=user.getEmail()%>">
 							</div>
 							<div class="form-group">
 								<label for="exampleInputEmail1">Phone No.</label> <input
 									type="number" class="form-control" id="exampleInputEmail1"
 									aria-describedby="emailHelp" required="required"
-									name="phone_no">
+									name="phone_no" value="<%=user.getPhone_no()%>">
 							</div>
 							<div class="form-group">
 								<label for="exampleInputPassword1">Password</label> <input

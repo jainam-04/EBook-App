@@ -19,7 +19,7 @@
 			</form>
 		</div>
 		<c:if test="${not empty UserObj}">
-			<div class="col-md-3">
+			<div>
 				<a href="cart.jsp" class="btn btn-primary"><i
 					class="fas fa-cart-plus"></i> Cart</a> <a
 					class="btn btn-success text-white"><i class="fas fa-user"></i>

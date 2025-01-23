@@ -1,3 +1,4 @@
+<%@page import="com.entity.User"%>
 <%@page import="com.entity.BookDetails"%>
 <%@page import="com.DB.DBConnect"%>
 <%@page import="com.DAO.BooksDAOImpl"%>
@@ -13,6 +14,7 @@
 <body style="background-color: #f0f1f2;">
 	<%@ include file="all_component/navbar.jsp"%>
 	<%
+	User user = (User) session.getAttribute("UserObj");
 	int id = Integer.parseInt(request.getParameter("id"));
 	BooksDAOImpl dao = new BooksDAOImpl(DBConnect.getConnection());
 	BookDetails book = dao.getBookById(id);
@@ -70,8 +72,9 @@
 				} else {
 				%>
 				<div class="text-center p-3">
-					<a href="" class="btn btn-primary"><i class="fas fa-cart-plus"></i>
-						Add Cart</a> <a class="btn btn-danger text-white"><%=book.getPrice()%>
+					<a href="add_cart?bid=<%=book.getBookId()%>&&uid=<%=user.getId()%>"
+						class="btn btn-primary"><i class="fas fa-cart-plus"></i> Add
+						Cart</a> <a class="btn btn-danger text-white"><%=book.getPrice()%>
 						<i class="fas fa-rupee-sign"></i></a>
 				</div>
 				<%

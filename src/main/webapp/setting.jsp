@@ -24,7 +24,7 @@ a:hover {
 	<c:if test="${empty UserObj}">
 		<c:redirect url="login.jsp" />
 	</c:if>
-	<div class="container" style="margin-bottom: 6.8vh;">
+	<div class="container" style="margin-bottom: 2.3vh;">
 		<h2 class="text-center mt-3">Hello ${UserObj.name}</h2>
 		<div class="row p-5">
 			<div class="col-md-4">
