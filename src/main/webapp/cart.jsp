@@ -20,16 +20,15 @@
 	</c:if>
 	<%@ include file="all_component/navbar.jsp"%>
 	<c:if test="${not empty success_msg}">
-		<div class="alert alert-success" role="alert">${success_msg}</div>
+		<div class="alert alert-success text-center" role="alert">${success_msg}</div>
 		<c:remove var="success_msg" scope="session" />
 	</c:if>
 	<c:if test="${not empty failed_msg}">
-		<div class="alert alert-danger" role="alert">${failed_msg}</div>
+		<div class="alert alert-danger text-center" role="alert">${failed_msg}</div>
 		<c:remove var="failed_msg" scope="session" />
 	</c:if>
-	<h1 class="text-center">Cart Page</h1>
-	<div class="container">
-		<div class="row p-2">
+	<div class="container p-3">
+		<div class="row">
 			<div class="col-md-6">
 				<div class="card">
 					<div class="card-body bg-white">
@@ -79,51 +78,54 @@
 					<div class="card-body">
 						<h3 class="text-center text-success mb-3">Your Details for
 							Order</h3>
-						<form>
+						<form action="order" method="post">
+							<input type="hidden" value="<%=user.getId()%>" name="id" />
 							<div class="form-row">
 								<div class="form-group col-md-6">
 									<label for="inputEmail4">Name</label> <input type="text"
-										class="form-control">
+										class="form-control" value="<%=user.getName()%>" name="name">
 								</div>
 								<div class="form-group col-md-6">
 									<label for="inputPassword4">Email</label> <input type="email"
-										class="form-control">
+										class="form-control" value="<%=user.getEmail()%>" name="email">
 								</div>
 							</div>
 							<div class="form-row">
 								<div class="form-group col-md-6">
 									<label for="inputEmail4">Mobile Number</label> <input
-										type="number" class="form-control">
+										type="number" class="form-control"
+										value="<%=user.getPhone_no()%>" name="phone_no">
 								</div>
 								<div class="form-group col-md-6">
 									<label for="inputPassword4">Address</label> <input type="text"
-										class="form-control">
+										class="form-control" name="address">
 								</div>
 							</div>
 							<div class="form-row">
 								<div class="form-group col-md-6">
 									<label for="inputEmail4">Landmark</label> <input type="text"
-										class="form-control">
+										class="form-control" name="landmark">
 								</div>
 								<div class="form-group col-md-6">
 									<label for="inputPassword4">City</label> <input type="text"
-										class="form-control">
+										class="form-control" name="city">
 								</div>
 							</div>
 							<div class="form-row">
 								<div class="form-group col-md-6">
 									<label for="inputEmail4">State</label> <input type="text"
-										class="form-control">
+										class="form-control" name="state">
 								</div>
 								<div class="form-group col-md-6">
 									<label for="inputPassword4">Zip Code</label> <input
-										type="number" class="form-control">
+										type="number" class="form-control" name="zip_code">
 								</div>
 							</div>
 							<div class="form-group">
-								<label>Payment Mode</label> <select class="form-control">
-									<option>--Select--</option>
-									<option>Cash on Delivery</option>
+								<label>Payment Mode</label> <select class="form-control"
+									name="payment_type">
+									<option value="no_select">--Select--</option>
+									<option value="COD">Cash on Delivery</option>
 								</select>
 							</div>
 							<div class="text-center">

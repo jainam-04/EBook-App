@@ -18,7 +18,7 @@
 	<c:if test="${empty UserObj}">
 		<c:redirect url="../login.jsp" />
 	</c:if>
-	<h3 class="text-center">Hello Admin</h3>
+	<h3 class="text-center mt-3">Hello Admin</h3>
 	<c:if test="${not empty success_msg}">
 		<h5 class="text-center text-success">${success_msg}</h5>
 		<c:remove var="success_msg" scope="session" />
@@ -27,7 +27,7 @@
 		<h5 class="text-center text-danger">${failed_msg}</h5>
 		<c:remove var="failed_msg" scope="session" />
 	</c:if>
-	<div class="container-fluid" style="margin-bottom: 5vh;">
+	<div class="container-fluid p-3">
 		<table class="table table-striped">
 			<thead class="bg-primary text-light">
 				<tr>

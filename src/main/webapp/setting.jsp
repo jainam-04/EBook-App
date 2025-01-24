@@ -24,9 +24,9 @@ a:hover {
 	<c:if test="${empty UserObj}">
 		<c:redirect url="login.jsp" />
 	</c:if>
-	<div class="container" style="margin-bottom: 2.3vh;">
+	<div class="container" style="margin-bottom: 4.7vh;">
 		<h2 class="text-center mt-3">Hello ${UserObj.name}</h2>
-		<div class="row p-5">
+		<div class="row p-4">
 			<div class="col-md-4">
 				<a href="sell_book.jsp">
 					<div class="card text-center">
@@ -52,23 +52,12 @@ a:hover {
 					<div class="card text-center">
 						<div class="card-body">
 							<i class="fas fa-address-card fa-3x text-primary"></i>
-							<h3 class="mt-2">Login & Security (Edit Profile)</h3>
+							<h3 class="mt-2">Edit Profile</h3>
 						</div>
 					</div>
 				</a>
 			</div>
-			<div class="col-md-4 mt-3">
-				<a href="user_address.jsp">
-					<div class="card text-center">
-						<div class="card-body">
-							<i class="fas fa-map-marker-alt fa-3x text-warning"></i>
-							<h4 class="mt-2">Your Address</h4>
-							<p>Edit Address</p>
-						</div>
-					</div>
-				</a>
-			</div>
-			<div class="col-md-4 mt-3">
+			<div class="col-md-6 mt-3">
 				<a href="order.jsp">
 					<div class="card text-center">
 						<div class="card-body">
@@ -79,7 +68,7 @@ a:hover {
 					</div>
 				</a>
 			</div>
-			<div class="col-md-4 mt-3">
+			<div class="col-md-6 mt-3">
 				<a href="helpline.jsp">
 					<div class="card text-center">
 						<div class="card-body">

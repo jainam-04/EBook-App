@@ -14,8 +14,8 @@
 	<c:if test="${empty UserObj}">
 		<c:redirect url="../login.jsp" />
 	</c:if>
-	<h3 class="text-center">Hello Admin</h3>
-	<div class="container-fluid" style="margin-bottom: 43vh;">
+	<h3 class="text-center mt-3">Hello Admin</h3>
+	<div class="container-fluid p-3">
 		<table class="table table-striped">
 			<thead class="bg-primary text-light">
 				<tr>

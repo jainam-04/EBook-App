@@ -9,8 +9,8 @@
 </head>
 <body>
 	<%@ include file="all_component/navbar.jsp"%>
-	<div class="container my-3">
-		<h3 class="text-center">Your Order</h3>
+	<h3 class="text-center mt-3">Your Orders</h3>
+	<div class="container p-3">
 		<table class="table table-striped">
 			<thead class="text-white bg-primary">
 				<tr>

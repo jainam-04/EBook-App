@@ -11,7 +11,7 @@
 </head>
 <body style="background-color: #f0f1f2;">
 	<%@include file="all_component/navbar.jsp"%>
-	<div class="container p-5" style="margin-bottom: 17.7vh;">
+	<div class="container p-5" style="margin-bottom: 9.5vh;">
 		<div class="row">
 			<div class="col-md-4 offset-md-4">
 				<div class="card">

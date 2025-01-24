@@ -14,7 +14,7 @@
 	<c:if test="${empty UserObj}">
 		<c:redirect url="login.jsp" />
 	</c:if>
-	<div class="container p-3" style="margin-bottom: 6.5vh;">
+	<div class="container p-3">
 		<div class="row">
 			<div class="col-md-4 offset-md-4">
 				<div class="card">

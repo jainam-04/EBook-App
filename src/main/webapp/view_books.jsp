@@ -19,7 +19,7 @@
 	BooksDAOImpl dao = new BooksDAOImpl(DBConnect.getConnection());
 	BookDetails book = dao.getBookById(id);
 	%>
-	<div class="container p-3 mt-4" style="margin-bottom: 7.8vh;">
+	<div class="container p-4">
 		<div class="row">
 			<div class="col-md-6 text-center p-5 border bg-white">
 				<img alt="" src="book/<%=book.getPhoto()%>"
