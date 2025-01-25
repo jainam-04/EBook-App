@@ -95,4 +95,20 @@ public class UserDAOImpl implements UserDAO {
 		}
 		return flag;
 	}
+
+	public boolean checkUser(String email) {
+		boolean flag = true;
+		try {
+			String sql = "select * from user where email = ?";
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setString(1, email);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				flag = false;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return flag;
+	}
 }

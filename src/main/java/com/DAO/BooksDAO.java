@@ -28,4 +28,6 @@ public interface BooksDAO {
 	public List<BookDetails> getAllOldBooks();
 
 	public List<BookDetails> getBookByUser(String email, String category);
+
+	public List<BookDetails> getBookBySearch(String ch);
 }

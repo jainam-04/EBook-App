@@ -19,7 +19,7 @@
 	BooksDAOImpl dao = new BooksDAOImpl(DBConnect.getConnection());
 	BookDetails book = dao.getBookById(id);
 	%>
-	<div class="container p-4">
+	<div class="container p-3" style="margin-bottom: 2.3vh;">
 		<div class="row">
 			<div class="col-md-6 text-center p-5 border bg-white">
 				<img alt="" src="book/<%=book.getPhoto()%>"
@@ -70,6 +70,16 @@
 				</div>
 				<%
 				} else {
+				if (user == null) {
+				%>
+				<div class="text-center p-3">
+					<a href="login.jsp" class="btn btn-primary"><i
+						class="fas fa-cart-plus"></i> Add Cart</a> <a
+						class="btn btn-danger text-white"><%=book.getPrice()%> <i
+						class="fas fa-rupee-sign"></i></a>
+				</div>
+				<%
+				} else {
 				%>
 				<div class="text-center p-3">
 					<a href="add_cart?bid=<%=book.getBookId()%>&&uid=<%=user.getId()%>"
@@ -78,6 +88,7 @@
 						<i class="fas fa-rupee-sign"></i></a>
 				</div>
 				<%
+				}
 				}
 				%>
 			</div>
