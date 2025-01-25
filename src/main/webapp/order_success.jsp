@@ -20,7 +20,8 @@
 		<h2>Your order is successful...</h2>
 		<h5>Within 7 days your product will be delivered on your address.</h5>
 		<a href="index.jsp" class="btn btn-primary mt-3">Home</a> <a
-			href="order.jsp" class="btn btn-danger mt-3">View Order</a>
+			href="order.jsp" class="btn btn-danger mt-3">View
+			Order</a>
 	</div>
 	<%@ include file="all_component/footer.jsp"%>
 </body>

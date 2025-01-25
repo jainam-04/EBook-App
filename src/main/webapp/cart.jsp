@@ -83,42 +83,43 @@
 							<div class="form-row">
 								<div class="form-group col-md-6">
 									<label for="inputEmail4">Name</label> <input type="text"
-										class="form-control" value="<%=user.getName()%>" name="name">
+										class="form-control" value="<%=user.getName()%>" name="name" required="required">
 								</div>
 								<div class="form-group col-md-6">
 									<label for="inputPassword4">Email</label> <input type="email"
-										class="form-control" value="<%=user.getEmail()%>" name="email">
+										class="form-control" value="<%=user.getEmail()%>" name="email" required="required">
 								</div>
 							</div>
 							<div class="form-row">
 								<div class="form-group col-md-6">
 									<label for="inputEmail4">Mobile Number</label> <input
 										type="number" class="form-control"
-										value="<%=user.getPhone_no()%>" name="phone_no">
+										value="<%=user.getPhone_no()%>" name="phone_no" required="required">
 								</div>
 								<div class="form-group col-md-6">
 									<label for="inputPassword4">Address</label> <input type="text"
-										class="form-control" name="address">
+										class="form-control" name="address" required="required">
 								</div>
 							</div>
 							<div class="form-row">
 								<div class="form-group col-md-6">
 									<label for="inputEmail4">Landmark</label> <input type="text"
-										class="form-control" name="landmark">
+										class="form-control" name="landmark" required="required">
 								</div>
 								<div class="form-group col-md-6">
 									<label for="inputPassword4">City</label> <input type="text"
-										class="form-control" name="city">
+										class="form-control" name="city" required="required">
 								</div>
 							</div>
 							<div class="form-row">
 								<div class="form-group col-md-6">
 									<label for="inputEmail4">State</label> <input type="text"
-										class="form-control" name="state">
+										class="form-control" name="state" required="required">
 								</div>
 								<div class="form-group col-md-6">
 									<label for="inputPassword4">Zip Code</label> <input
-										type="number" class="form-control" name="zip_code">
+										type="number" class="form-control" name="zip_code"
+										required="required">
 								</div>
 							</div>
 							<div class="form-group">

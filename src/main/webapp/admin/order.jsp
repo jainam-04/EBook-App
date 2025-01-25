@@ -1,3 +1,7 @@
+<%@page import="com.entity.BookOrder"%>
+<%@page import="java.util.List"%>
+<%@page import="com.DB.DBConnect"%>
+<%@page import="com.DAO.BookOrderDAOImpl"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -31,39 +35,25 @@
 				</tr>
 			</thead>
 			<tbody>
+				<%
+				BookOrderDAOImpl dao = new BookOrderDAOImpl(DBConnect.getConnection());
+				List<BookOrder> list = dao.getAllOrderBook();
+				for (BookOrder order : list) {
+				%>
 				<tr>
-					<th scope="row">1</th>
-					<td>Mark</td>
-					<td>Otto</td>
-					<td>@mdo</td>
-					<td>Otto</td>
-					<td>@mdo</td>
-					<td>@mdo</td>
-					<td>Otto</td>
-					<td>@mdo</td>
+					<td><%=order.getOrderId()%></td>
+					<td><%=order.getUserName()%></td>
+					<td><%=order.getEmail()%></td>
+					<td><%=order.getFullAddress()%></td>
+					<td><%=order.getPhoneNo()%></td>
+					<td><%=order.getBookName()%></td>
+					<td><%=order.getAuthorName()%></td>
+					<td><%=order.getPrice()%></td>
+					<td><%=order.getPaymentType()%></td>
 				</tr>
-				<tr>
-					<th scope="row">2</th>
-					<td>Jacob</td>
-					<td>Thornton</td>
-					<td>@fat</td>
-					<td>Otto</td>
-					<td>@mdo</td>
-					<td>@mdo</td>
-					<td>Otto</td>
-					<td>@mdo</td>
-				</tr>
-				<tr>
-					<th scope="row">3</th>
-					<td>Larry</td>
-					<td>the Bird</td>
-					<td>@twitter</td>
-					<td>Otto</td>
-					<td>@mdo</td>
-					<td>@mdo</td>
-					<td>Otto</td>
-					<td>@mdo</td>
-				</tr>
+				<%
+				}
+				%>
 			</tbody>
 		</table>
 	</div>
